@@ -51,8 +51,36 @@ fun main(args: Array<String>) {
         println("One circle is inside another")
     } else if (r1+r2 >= c1c2 || r1 == c1c2 + r2 || r2 == c1c2 + r1) {
         println("Result: the circles intersect")
+        defineInterception(x1, y1, x2, y2, r1, r2, c1c2)
     } else {
         println("Result: the circles doesn't intersect")
     }
 
 }
+
+private fun defineInterception(x1:Double, y1:Double, x2:Double, y2:Double, r1:Double, r2: Double, c1c2: Double) {
+    if (r1 == r2 && x1 == x2 && y1 == y2) {
+        println("Окружности совпадают")
+    } else {
+        val a: Double = (r1.pow(2) - r2.pow(2) + c1c2.pow(2)) / (2 * c1c2)
+        val h: Double = sqrt(r1.pow(2) - a.pow(2))
+        val p3x: Double = x1 + a / c1c2 * (x2 - x1)
+        val p3y: Double = y1 + a / c1c2 * (y2 - y1)
+        val firstX1 = p3x + h / c1c2 * (y2 - y1)
+        val firstY1 = p3y - h / c1c2 * (x2 - x1)
+        val firstX2 = p3x - h / c1c2 * (y2 - y1)
+        val firstY2 = p3y + h / c1c2 * (x2 - x1)
+        if (firstX1 == firstX2 && firstY1 == firstY2) {
+            println("Одно пересечение: x1 = ${"%.2f".format(firstX1)} " +
+                    "y1 = ${"%.2f".format(firstY1)}")
+        } else {
+            println("Первое пересечение: x1 = ${"%.2f".format(firstX1)} " +
+                    "y1 = ${"%.2f".format(firstY1)} , " +
+                    "Второе пересечение: x2 = ${"%.2f".format(firstX2)} " +
+                    "y2 = ${"%.2f".format(firstY2)}"
+            )
+        }
+    }
+}
+
+//https://planetcalc.ru/8098/ - тут формулы

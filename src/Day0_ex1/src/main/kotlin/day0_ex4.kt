@@ -78,7 +78,7 @@ private fun comfortableTemperature(mode: Mode, season: Season, value: Double) {
     if (value < lower) {
         println("Please, make it warmer by ${"%.2f".format(lower - value)} degrees.")
     } else if (value > upper) {
-        println("Please, make it warmer by ${"%.2f".format(upper - value)} degrees.")
+        println("Please, make it colder by ${"%.2f".format(upper - value)} degrees.")
     } else {
         println("Comfortable temperature")
     }
