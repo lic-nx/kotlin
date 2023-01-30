@@ -47,8 +47,10 @@ fun main(args: Array<String>) {
 
     var c1c2 = sqrt((x2 - x1).pow(2.0) + (y2 - y1).pow(2.0))
 
-    if (r1 > c1c2 + r2 || r2 > c1c2 + r1) {
-        println("One circle is inside another")
+    if (x1 == x2 && y1 == y2 && r1 == r2) {
+        println("Result: circles match up")
+    } else if (r1 > c1c2 + r2 || r2 > c1c2 + r1) {
+        println("Result: one circle is inside another")
     } else if (r1+r2 >= c1c2 || r1 == c1c2 + r2 || r2 == c1c2 + r1) {
         println("Result: the circles intersect")
     } else {
