@@ -1,0 +1,1 @@
+C:\Users\nasty\Desktop\kotlinDay2\src\exercice1\build\classes\kotlin\main\Compani$Vacancies.class;C:\Users\nasty\Desktop\kotlinDay2\src\exercice1\build\classes\kotlin\main\Compani.class;C:\Users\nasty\Desktop\kotlinDay2\src\exercice1\build\classes\kotlin\main\MainKt.class
